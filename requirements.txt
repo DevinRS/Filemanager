@@ -1,3 +1,8 @@
 pandas==2.2.2
 streamlit==1.36.0
 streamlit-pdf-viewer==0.0.14
+google-api-core==2.19.1
+google-api-python-client==2.137.0
+google-auth==2.32.0
+google-auth-httplib2==0.2.0
+googleapis-common-protos==1.63.2

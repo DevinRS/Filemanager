@@ -84,7 +84,7 @@ if st.session_state.render_body:
         parent_folder_id = st.session_state.parent_folder
         parent_folder_name = google_api.get_folder_name(parent_folder_id)
         parent_folder_mime = "application/vnd.google-apps.folder"
-        parent_folder_url = f"http://localhost:8501/?fileid={parent_folder_id}&filename={parent_folder_name}&filetype={parent_folder_mime}"
+        parent_folder_url = f"https://bubududu.streamlit.app/?fileid={parent_folder_id}&filename={parent_folder_name}&filetype={parent_folder_mime}"
         st.markdown(f"⬆️ <a href='{parent_folder_url}' target='_self'>Go to previous folder</a>", unsafe_allow_html=True)
 
     # region: -- SEARCH BAR AND FILTER--
@@ -128,7 +128,7 @@ if st.session_state.render_body:
                 st.session_state.selected_files.append(file["id"])
             elif not checkbox and file["id"] in st.session_state.selected_files:
                 st.session_state.selected_files.remove(file["id"])
-        url = f"http://localhost:8501/?fileid={fileid}&filename={filename}&filetype={filetype}"
+        url = f"https://bubududu.streamlit.app/?fileid={fileid}&filename={filename}&filetype={filetype}"
         if file["mimeType"] == "application/vnd.google-apps.folder":
             col2.markdown(f"📁 <a href='{url}' target='_self'>{filename}</a>", unsafe_allow_html=True)
         # if the mimeType starts with "image/", then it is an image
